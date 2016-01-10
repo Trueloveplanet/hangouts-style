@@ -1,0 +1,91 @@
+@charset "UTF-8";
+html, body {
+  margin: 0;
+}
+body {
+  font-family: Helvetica;
+  background: #f2f2f2;
+}
+h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+header {
+  padding: 12px 10px;
+  color: #fff;
+  background: #0f9d58;
+  max-height: 54px;
+  position: relative;
+  box-shadow: 0 0 3px 3px rgba(0,0,0,.2);
+}
+select {
+  position: absolute;
+  top: 18px;
+  right: 10px
+}
+h1 {
+  padding: 0 0 4px;
+  font-size: 13px;
+}
+h1 + p {
+  font-size: 11px;
+}
+.hangouts {
+  padding: 0.8em 0.7em;
+  list-style: none;
+}
+.hangouts > li {
+  position: relative;
+}
+.hangouts > li:after {
+  content: "";
+  clear: both;
+}
+.user-icon {
+  float: left;
+}
+.user-icon img {
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+}
+.meta time,
+.user-name {
+  color: #888;
+  font-size: 12px;
+  display: inline-block;
+  padding-bottom: 0.4em;
+}
+.meta time:after {
+  padding: 0 0.2em;
+  display: inline-block;
+  content: "・";
+}
+.talk {
+  margin-left: 48px;
+}
+.talk p {
+  margin-bottom: 0.7em;
+  border-radius: 0 6px 6px 6px;
+  padding: 0.4em 0.6em;
+  background: #fff;
+  position: relative;
+  display: inline-block;
+}
+.talk p:before {
+  content: "";
+  border-left: 10px solid #f2f2f2;
+  border-top: 10px solid #fff;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  left: -10px;
+}
+p img {
+  display: inline-block;
+  max-width: 60%;
+}
+[href] {
+  word-break: break-all;
+}

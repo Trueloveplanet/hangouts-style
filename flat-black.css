@@ -1,0 +1,71 @@
+@charset "UTF-8";
+html, body {
+  margin: 0;
+}
+body {
+  font-family: Helvetica;
+  color: #9f9f9f;
+  background: #111;
+}
+h1, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+header {
+  padding: 12px 10px;
+  max-height: 54px;
+  position: relative;
+  color: #fff;
+  background: #000;
+}
+select {
+  position: absolute;
+  top: 18px;
+  right: 10px
+}
+h1 {
+  padding: 0 0 4px;
+  font-size: 13px;
+}
+h1 + p {
+  font-size: 11px;
+}
+.hangouts {
+  list-style: none;
+}
+.hangouts > li {
+  position: relative;
+  padding: 0.75em 0.7em 0.9em;
+}
+.hangouts > li:nth-child(odd) {
+  background: #222;
+}
+.hangouts > li:after {
+  content: "";
+  clear: both;
+}
+.user-icon {
+  float: left;
+}
+.meta time,
+.user-name {
+  color: #666;
+  font-size: 12px;
+  display: inline-block;
+  padding-bottom: 0.2em;
+}
+.meta time:after {
+  padding: 0 0.2em;
+  display: inline-block;
+  content: "・";
+}
+[href] {
+  word-break: break-all;
+}
+.user-icon img {
+  display: none;
+}
+p img {
+  height: 30px;
+  position: relative;
+}
