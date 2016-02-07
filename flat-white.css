@@ -1,43 +1,65 @@
 @charset "UTF-8";
+html, body, h1, p, ul, li, img ,header, select, option {
+  box-sizing: border-box;
+  line-height: 1.45;
+}
 html, body {
   margin: 0;
+  font-size: 16px;
+  font-size: 1rem;
 }
 body {
-  font-family: Helvetica;
-  color: #333;
-  background: #fff;
+  font-family: Helvetica, sans-serif;
+  background: #f2f2f2;
 }
 h1, p, ul, li {
   margin: 0;
   padding: 0;
 }
+img {
+  vertical-align: bottom;
+}
 header {
-  border-bottom: 1px solid #ddd;
-  padding: 12px 10px;
-  max-height: 54px;
+  padding: 0 10px;
+  height: 44px;
   position: relative;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+h1 {
+  padding: 0.45em 0 0.2em;
+  font-size: 0.75em;
+}
+h1 + p {
+  font-size: 0.4em;
 }
 select {
   position: absolute;
-  top: 18px;
+  top: 13px;
   right: 10px
 }
-h1 {
-  padding: 0 0 4px;
-  font-size: 13px;
-}
-h1 + p {
-  font-size: 11px;
+@media (min-width: 500px) {
+  header {
+    height: 52px;
+  }
+  select {
+    top: 16px;
+  }
+  h1 {
+    padding-top: 0.6em;
+    font-size: 0.8em;
+  }
 }
 .hangouts {
   list-style: none;
+  background: #fff;
 }
 .hangouts > li {
   position: relative;
   padding: 0.75em 0.7em 0.9em;
 }
 .hangouts > li:nth-child(odd) {
-  background: #f2f2f2;
+  background: #efefef;
 }
 .hangouts > li:after {
   content: "";
@@ -46,23 +68,33 @@ h1 + p {
 .user-icon {
   float: left;
 }
+.meta {
+  color: #888;
+  font-size: 0.7em;
+  line-height: 1.2;
+  padding-bottom: 0.45em;
+}
 .meta time,
 .user-name {
-  color: #888;
-  font-size: 12px;
   display: inline-block;
-  padding-bottom: 0.2em;
 }
 .meta time:after {
   padding: 0 0.2em;
   display: inline-block;
   content: "・";
 }
+.balloon {
+  font-size: 0.95em;
+  color: #444;
+}
 [href] {
   word-break: break-all;
 }
 .user-icon img {
   display: none;
+}
+img:hover {
+  opacity: .7;
 }
 p img {
   height: 30px;

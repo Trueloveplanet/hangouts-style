@@ -1,34 +1,55 @@
 @charset "UTF-8";
+html, body, h1, p, ul, li, img ,header, select, option {
+  box-sizing: border-box;
+  line-height: 1.45;
+}
 html, body {
   margin: 0;
+  font-size: 16px;
+  font-size: 1rem;
 }
 body {
-  font-family: Helvetica;
+  font-family: Helvetica, sans-serif;
   background: #f2f2f2;
 }
 h1, p, ul, li {
   margin: 0;
   padding: 0;
 }
+img {
+  vertical-align: bottom;
+}
 header {
-  padding: 12px 10px;
+  padding: 0 10px;
   color: #fff;
   background: #0f9d58;
-  max-height: 54px;
+  height: 44px;
   position: relative;
   box-shadow: 0 0 3px 3px rgba(0,0,0,.2);
 }
-select {
-  position: absolute;
-  top: 18px;
-  right: 10px
-}
 h1 {
-  padding: 0 0 4px;
-  font-size: 13px;
+  padding: 0.45em 0 0.2em;
+  font-size: 0.75em;
 }
 h1 + p {
-  font-size: 11px;
+  font-size: 0.4em;
+}
+select {
+  position: absolute;
+  top: 13px;
+  right: 10px
+}
+@media (min-width: 500px) {
+  header {
+    height: 52px;
+  }
+  select {
+    top: 16px;
+  }
+  h1 {
+    padding-top: 0.6em;
+    font-size: 0.8em;
+  }
 }
 .hangouts {
   padding: 0.8em 0.7em;
@@ -44,17 +65,24 @@ h1 + p {
 .user-icon {
   float: left;
 }
+.user-icon a {
+  text-decoration: none;
+  display: block;
+}
 .user-icon img {
   border-radius: 50%;
   width: 34px;
   height: 34px;
 }
+.meta {
+  color: #888;
+  font-size: 0.7em;
+  line-height: 1.2;
+  padding-bottom: 0.45em;
+}
 .meta time,
 .user-name {
-  color: #888;
-  font-size: 12px;
   display: inline-block;
-  padding-bottom: 0.4em;
 }
 .meta time:after {
   padding: 0 0.2em;
@@ -64,27 +92,32 @@ h1 + p {
 .talk {
   margin-left: 48px;
 }
-.talk p {
-  margin-bottom: 0.7em;
-  border-radius: 0 6px 6px 6px;
-  padding: 0.4em 0.6em;
+.balloon {
+  margin-bottom: 1.2em;
+  border-radius: 0 0.45em 0.45em 0.45em;
+  padding: 0.54em 0.55em 0.45em;
+  font-size: 0.95em;
   background: #fff;
   position: relative;
   display: inline-block;
+  color: #444;
 }
-.talk p:before {
+.balloon:before {
   content: "";
-  border-left: 10px solid #f2f2f2;
-  border-top: 10px solid #fff;
+  border-left: 5px solid #f2f2f2;
+  border-top: 5px solid #fff;
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   top: 0;
-  left: -10px;
+  left: -5px;
 }
-p img {
+.balloon img {
   display: inline-block;
-  max-width: 60%;
+  max-width: 280px;
+}
+img:hover {
+  opacity: .7;
 }
 [href] {
   word-break: break-all;
