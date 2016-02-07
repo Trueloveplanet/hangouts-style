@@ -36,7 +36,7 @@ h1 + p {
 }
 select {
   position: absolute;
-  top: 13px;
+  top: 12px;
   right: 10px
 }
 @media (min-width: 500px) {

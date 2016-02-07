@@ -36,7 +36,7 @@ h1 + p {
 }
 select {
   position: absolute;
-  top: 13px;
+  top: 12px;
   right: 10px
 }
 @media (min-width: 500px) {
@@ -73,6 +73,8 @@ select {
   border-radius: 50%;
   width: 34px;
   height: 34px;
+  width: 2.1rem;
+  height: 2.1rem;
 }
 .meta {
   color: #888;
@@ -91,6 +93,7 @@ select {
 }
 .talk {
   margin-left: 48px;
+  margin-left: 3rem;
 }
 .balloon {
   margin-bottom: 1.2em;
@@ -115,7 +118,7 @@ select {
 .balloon img {
   display: inline-block;
   max-width: 200px;
-  max-width: 12rem;
+  max-width: 14rem;
 }
 img:hover {
   opacity: .7;
