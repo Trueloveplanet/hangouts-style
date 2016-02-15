@@ -9,73 +9,22 @@
 </head>
 <body class="js-nav-push">
 <header class="headroom">
-  <div class="header-toggle"><button class="header-button" id="js-menu-left-toggle"><div class="icon-menu"></div></button></div>
+  <div class="header-toggle"><button class="header-button" id="js-menu-left-toggle"><div class="icon">menu</div></button></div>
   <div class="header-title">
     <h1>Hangouts Archives</h1>
   </div>
 </header>
 <div class="container">
-  test<div class="icon-github"></div>
+  <div style="border-radius:5px;background:#fff;padding:16px;margin: 0 16px">
+    <p>Google Hangouts のアーカイブを表示するためのテンプレートです💚</p>
+    <p><span class="icon-github"></span> <a href="https://github.com/Trueloveplanet/hangouts-style" target="_blank">GitHub</a></p>
+  </div>
 </div>
 <nav class="nav js-nav-left" id="js-menu-left">
+  <h2><a href="index.html">Index</a></h2>
   <ul class="nav-list">
-    <li><a href="index.html">Index</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2016</a></li>
-    <li><a href="hangouts.html">2015</a></li>
+    <li><a href="hangouts.html"><span class="icon-person"></span> Trueloveplanet - TLP</a></li>
+    <li><a href="hangouts.html"><span class="icon-people"></span> とある緑のハングアウト</a></li>
   </ul>
 </nav>
 <script src="https://cdn.rawgit.com/Trueloveplanet/hangouts-style/c7b839cef343694e56b8bbfeff79de5dcf316f8e/layzr.min.js"></script>
@@ -105,18 +54,9 @@ headroom.init();
 // nav
 var menuLeft = document.getElementById( 'js-menu-left' ),
   menuRight = document.getElementById( 'js-menu-right' ),
-  //showLeft = document.getElementById( 'js-menu-left-toggle' ),
-  //showRight = document.getElementById( 'js-menu-right-toggle' ),
   showLeftPush = document.getElementById( 'js-menu-left-toggle' ),
   showRightPush = document.getElementById( 'js-menu-right-toggle' ),
   body = document.body;
-/*
-showLeft.onclick = function() {
-  classie.toggle( this, 'active' );
-  classie.toggle( menuLeft, 'js-nav--open' );
-  disableOther( 'showLeft' );
-};
-*/
 showLeftPush.onclick = function() {
   classie.toggle( this, 'active' );
   classie.toggle( body, 'js-nav-push-toright' );

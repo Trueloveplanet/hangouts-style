@@ -1,5 +1,5 @@
 @charset "UTF-8";
-html, body, h1, p, a, div, ul, li, img ,header, select, option, button {
+html, body, h1, h2, p, a, div, ul, li, img ,header, select, option, button {
   box-sizing: border-box;
   line-height: 1.45;
 }
@@ -11,7 +11,7 @@ body {
   font-family: Helvetica, sans-serif;
   background: #f2f2f2;
 }
-h1, p, ul, li {
+h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
 }
@@ -27,7 +27,7 @@ img {
   width: 2.75rem;
   vertical-align: middle;
 }
-.header-toggle [class^="icon-"]:before {
+.header-toggle .icon {
   color: #fff;
   font-size: 20px;
 }
@@ -196,15 +196,15 @@ img:hover {
 }
 @font-face {
   font-family: 'icomoon';
-  src:  url(https://cdn.rawgit.com/Trueloveplanet/hangouts-style/9edb1655172d17f7bb1ee79f431f28985c4960c3/fonts/icomoon.eot?55zrqd);
-  src:  url(https://cdn.rawgit.com/Trueloveplanet/hangouts-style/9edb1655172d17f7bb1ee79f431f28985c4960c3/fonts/icomoon.eot?55zrqd#iefix) format(embedded-opentype),
-    url(https://cdn.rawgit.com/Trueloveplanet/hangouts-style/9edb1655172d17f7bb1ee79f431f28985c4960c3/fonts/icomoon.ttf?55zrqd) format(truetype),
-    url(https://cdn.rawgit.com/Trueloveplanet/hangouts-style/9edb1655172d17f7bb1ee79f431f28985c4960c3/fonts/icomoon.woff?55zrqd) format(woff),
-    url(https://cdn.rawgit.com/Trueloveplanet/hangouts-style/9edb1655172d17f7bb1ee79f431f28985c4960c3/fonts/icomoon.svg?55zrqd#icomoon) format(svg);
+  src:  url('fonts/icomoon.eot?ny0bx3');
+  src:  url('fonts/icomoon.eot?ny0bx3#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?ny0bx3') format('truetype'),
+    url('fonts/icomoon.woff?ny0bx3') format('woff'),
+    url('fonts/icomoon.svg?ny0bx3#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
-[class^="icon-"], [class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"], .icon {
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
@@ -212,11 +212,57 @@ img:hover {
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.icon-controller-fast-backward:before {
-  content: "\e900";
+.icon-time:before {
+  content: "\e8b5";
+}
+.icon-arrow-back:before {
+  content: "\e5c4";
+}
+.icon-arrow-down:before {
+  content: "\e5db";
+}
+.icon-arrow-forward:before {
+  content: "\e5c8";
+}
+.icon-arrow-up:before {
+  content: "\e5d8";
+}
+.icon-chart:before {
+  content: "\e801";
+}
+.icon-chat:before {
+  content: "\e0b7";
+}
+.icon-chat-bubble:before {
+  content: "\e0ca";
+}
+.icon-folder:before {
+  content: "\e2c7";
+}
+.icon-folder-shared:before {
+  content: "\e2c9";
+}
+.icon-folder-star:before {
+  content: "\e617";
+}
+.icon-question-answer:before {
+  content: "\e8af";
+}
+.icon-people:before {
+  content: "\e7fc";
+}
+.icon-person:before {
+  content: "\e7ff";
 }
 .icon-warning:before {
   content: "\e901";
@@ -230,26 +276,23 @@ img:hover {
 .icon-bookmarks:before {
   content: "\e904";
 }
-.icon-arrow-down:before {
+.icon-down:before {
   content: "\e905";
 }
-.icon-arrow-left:before {
+.icon-left:before {
   content: "\e906";
 }
-.icon-arrow-right:before {
+.icon-right:before {
   content: "\e907";
 }
-.icon-arrow-up:before {
+.icon-up:before {
   content: "\e908";
 }
-.icon-folder:before {
+.icon-more:before {
+  content: "\e900";
+}
+.icon-globe:before {
   content: "\e909";
-}
-.icon-link:before {
-  content: "\e90a";
-}
-.icon-list:before {
-  content: "\e90b";
 }
 .icon-menu:before {
   content: "\e90c";
@@ -259,9 +302,6 @@ img:hover {
 }
 .icon-github:before {
   content: "\e90e";
-}
-.icon-google-with-circle:before {
-  content: "\e90f";
 }
 .icon-google:before {
   content: "\e910";
@@ -305,6 +345,20 @@ img:hover {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+.nav h2,
+.nav li {
+  font-size : 13px;
+  font-size: 0.93rem;
+}
+.nav a {
+  padding: 0.8em 0.9em;
+  display: block;
+  text-decoration: none;
+  color: #333;
+}
+.nav a:hover {
+  background: rgba(0,0,0,.1);
 }
 @media (min-width: 500px) {
   header {

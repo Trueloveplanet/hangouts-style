@@ -10,7 +10,7 @@
 </head>
 <body class="js-nav-push">
 <header class="headroom">
-  <div class="header-toggle"><button class="header-button" id="js-menu-left-toggle"><div class="icon-menu"></div></button></div>
+  <div class="header-toggle"><button class="header-button" id="js-menu-left-toggle"><div class="icon">menu</div></button></div>
   <div class="header-title">
     <h1>Trueloveplanet - TLP</h1>
     <p><time datetime="2016-01-06T23:31:10+09:00">2016/01/06 23:31:10</time> 〜 <time datetime="2016-01-08T02:14:18+09:00">2016/01/08 02:14:18</time></p>
@@ -123,14 +123,15 @@
   </ul>
 </div>
 <nav class="nav js-nav-left" id="js-menu-left">
+  <h2><a href="index.html">Index</a></h2>
   <ul class="nav-list">
-    <li><a href="index.html">Index</a></li>
-    <li><a href="index.html">2016</a></li>
+    <li><a href="hangouts.html"><span class="icon-person"></span> Trueloveplanet - TLP</a></li>
+    <li><a href="hangouts.html"><span class="icon-people"></span> とある緑のハングアウト</a></li>
   </ul>
 </nav>
 <script src="https://cdn.rawgit.com/Trueloveplanet/hangouts-style/c7b839cef343694e56b8bbfeff79de5dcf316f8e/layzr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.js"></script>
-<script src="bower_components/classie/classie.js"></script>
+<script src="https://cdn.rawgit.com/Trueloveplanet/hangouts-style/9edb1655172d17f7bb1ee79f431f28985c4960c3/bower_components/classie/classie.js"></script>
 <script>
 var instance = Layzr({
   normal: 'data-normal',
@@ -155,18 +156,9 @@ headroom.init();
 // nav
 var menuLeft = document.getElementById( 'js-menu-left' ),
   menuRight = document.getElementById( 'js-menu-right' ),
-  //showLeft = document.getElementById( 'js-menu-left-toggle' ),
-  //showRight = document.getElementById( 'js-menu-right-toggle' ),
   showLeftPush = document.getElementById( 'js-menu-left-toggle' ),
   showRightPush = document.getElementById( 'js-menu-right-toggle' ),
   body = document.body;
-/*
-showLeft.onclick = function() {
-  classie.toggle( this, 'active' );
-  classie.toggle( menuLeft, 'js-nav--open' );
-  disableOther( 'showLeft' );
-};
-*/
 showLeftPush.onclick = function() {
   classie.toggle( this, 'active' );
   classie.toggle( body, 'js-nav-push-toright' );
