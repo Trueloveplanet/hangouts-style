@@ -1,12 +1,11 @@
 @charset "UTF-8";
-html, body, h1, p, ul, li, img ,header, select, option {
+html, body, h1, p, a, div, ul, li, img ,header, select, option {
   box-sizing: border-box;
   line-height: 1.45;
 }
 html, body {
   margin: 0;
   font-size: 16px;
-  font-size: 1rem;
 }
 body {
   font-family: Helvetica, sans-serif;
@@ -20,12 +19,15 @@ img {
   vertical-align: bottom;
 }
 header {
+  display: block;
+  width: 100%;
   padding: 0 10px;
   color: #fff;
   background: #0f9d58;
   height: 44px;
   position: relative;
   box-shadow: 0 0 3px 3px rgba(0,0,0,.2);
+  z-index: 2;
 }
 h1 {
   padding: 0.45em 0 0.2em;
@@ -37,23 +39,56 @@ h1 + p {
 select {
   position: absolute;
   top: 12px;
-  right: 10px
+  right: 10px;
 }
-@media (min-width: 500px) {
-  header {
-    height: 52px;
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
   }
-  select {
-    top: 16px;
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
-  h1 {
-    padding-top: 0.6em;
-    font-size: 0.8em;
+}
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
   }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+.headroom--top,
+.headroom--pinned {
+  position: fixed;
+}
+.headroom--pinned {
+  position: fixed;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+.headroom--unpineed {
+  position: absolute;
 }
 .hangouts {
   padding: 0.8em 0.7em;
   list-style: none;
+}
+.headroom--top + .hangouts {
+  padding-top: 58px;
+  padding-top: 3.62rem;
+}
+.headroom--unpineed + .hangouts {
+  padding-top: 0.8em;
 }
 .hangouts > li {
   position: relative;
@@ -107,17 +142,17 @@ select {
 }
 .balloon:before {
   content: "";
-  border-left: 5px solid #f2f2f2;
-  border-top: 5px solid #fff;
+  border-left: 0.31em solid #f2f2f2;
+  border-top: 0.31em solid #fff;
   position: absolute;
-  width: 5px;
-  height: 5px;
+  width: 0.31em;
+  height: 0.31em;
   top: 0;
-  left: -5px;
+  left: -0.31em;
 }
 .balloon img {
   display: inline-block;
-  max-width: 200px;
+  max-width: 224px;
   max-width: 14rem;
 }
 img:hover {
@@ -125,4 +160,33 @@ img:hover {
 }
 [href] {
   word-break: break-all;
+}
+@media (min-width: 500px) {
+  header {
+    height: 52px;
+    height: 3.25rem;
+  }
+  h1 {
+    padding-top: 0.6em;
+    font-size: 0.8em;
+  }
+  .headroom--top + .hangouts {
+    padding-top: 68px;
+    padding-top: 4.25rem;
+  }
+  .headroom--unpineed + .hangouts {
+    padding-top: 0.8em;
+  }
+}
+@media (min-width: 960px) {
+  .user-icon img {
+    width: 48px;
+    height: 48px;
+    width: 3rem;
+    height: 3rem;
+  }
+  .talk {
+    margin-left: 64px;
+    margin-left: 4rem;
+  }
 }
