@@ -196,11 +196,11 @@ img:hover {
 }
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?ny0bx3');
-  src:  url('fonts/icomoon.eot?ny0bx3#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?ny0bx3') format('truetype'),
-    url('fonts/icomoon.woff?ny0bx3') format('woff'),
-    url('fonts/icomoon.svg?ny0bx3#icomoon') format('svg');
+  src:  url('https://cdn.rawgit.com/Trueloveplanet/hangouts-style/989e5e074c0dffb192ad3300835ac27bb19b35e7/fonts/icomoon.eot?ny0bx3');
+  src:  url('https://cdn.rawgit.com/Trueloveplanet/hangouts-style/989e5e074c0dffb192ad3300835ac27bb19b35e7/fonts/icomoon.eot?ny0bx3#iefix') format('embedded-opentype'),
+    url('https://cdn.rawgit.com/Trueloveplanet/hangouts-style/989e5e074c0dffb192ad3300835ac27bb19b35e7/fonts/icomoon.ttf?ny0bx3') format('truetype'),
+    url('https://cdn.rawgit.com/Trueloveplanet/hangouts-style/989e5e074c0dffb192ad3300835ac27bb19b35e7/fonts/icomoon.woff?ny0bx3') format('woff'),
+    url('https://cdn.rawgit.com/Trueloveplanet/hangouts-style/989e5e074c0dffb192ad3300835ac27bb19b35e7/fonts/icomoon.svg?ny0bx3#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
