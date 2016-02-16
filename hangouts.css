@@ -1,7 +1,7 @@
 @charset "UTF-8";
 html, body, h1, h2, p, a, div, ul, li, img ,header, select, option, button {
   box-sizing: border-box;
-  line-height: 1.45;
+  line-height: 1.6;
 }
 html, body {
   margin: 0;
@@ -136,13 +136,13 @@ select {
 .user-icon a {
   text-decoration: none;
   display: block;
+  width: 2.12em;
+  height: 2.12em;
 }
 .user-icon img {
   border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 100%;
+  height: 100%;
 }
 .meta {
   color: #888;
@@ -160,14 +160,13 @@ select {
   content: "・";
 }
 .talk {
-  margin-left: 48px;
-  margin-left: 3rem;
+  margin-left: 2.75em;
 }
 .talk-body {
-  margin-bottom: 1.2em;
+  margin-bottom: 1.75em;
   border-radius: 0 0.45em 0.45em 0.45em;
-  padding: 0.54em 0.55em 0.45em;
-  font-size: 0.95em;
+  padding: 0.54em 0.69em 0.5em;
+  font-size: 0.87em;
   background: #fff;
   position: relative;
   display: inline-block;
@@ -181,7 +180,7 @@ select {
   width: 0.31em;
   height: 0.31em;
   top: 0;
-  left: -0.31em;
+  left: -0.3em;
 }
 .talk-body img {
   display: inline-block;
@@ -360,7 +359,7 @@ img:hover {
 .nav a:hover {
   background: rgba(0,0,0,.1);
 }
-@media (min-width: 500px) {
+@media (min-width: 375px) {
   header {
     height: 52px;
     height: 3.25rem;
@@ -375,16 +374,28 @@ img:hover {
   .headroom--unpineed + .container {
     padding-top: 0.8em;
   }
-}
-@media (min-width: 960px) {
-  .user-icon img {
-    width: 48px;
-    height: 48px;
-    width: 3rem;
-    height: 3rem;
+  .user-icon a {
+    width: 2.5em;
+    height: 2.5em;
   }
   .talk {
-    margin-left: 64px;
-    margin-left: 4rem;
+    margin-left: 3.2em;
+  }
+}
+@media (min-width: 414px) {
+  .meta {
+    font-size: 0.75em;
+  }
+  .talk-body {
+    font-size: 0.9375em;
+  }
+}
+@media (min-width: 960px) {
+  .user-icon a {
+    width: 3em;
+    height: 3em;
+  }
+  .talk {
+    margin-left: 3.8em;
   }
 }
