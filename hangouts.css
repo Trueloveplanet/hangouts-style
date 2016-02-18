@@ -6,10 +6,10 @@ html, body, h1, h2, p, a, div, ul, li, img ,header, select, option, button {
 html, body {
   margin: 0;
   font-size: 16px;
+  background: #f2f2f2;
 }
 body {
   font-family: Helvetica, sans-serif;
-  background: #f2f2f2;
 }
 h1, h2, p, ul, li {
   margin: 0;
@@ -17,6 +17,13 @@ h1, h2, p, ul, li {
 }
 img {
   vertical-align: bottom;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
 }
 .header-toggle,
 .header-title {
@@ -59,20 +66,15 @@ header {
   box-shadow: 0 0 2px 2px rgba(0,0,0,.2);
   z-index: 2;
 }
-h1 {
+.header-title h1 {
   padding: 0;
   font-size: 0.75em;
 }
-h1 + p {
+.header-title h1 + p {
   font-size: 0.65em;
 }
 .header-title h1:only-child {
   font-size: 1em;
-}
-select {
-  position: absolute;
-  top: 12px;
-  right: 10px;
 }
 @-webkit-keyframes slideInDown {
   from {
@@ -112,19 +114,23 @@ select {
 .headroom--unpineed {
   position: absolute;
 }
+.main {
+  background: #f2f2f2;
+}
 .hangouts {
-  padding: 0 0.7em 0.8em;
+  padding: 0.8em 0.7em;
   list-style: none;
 }
 .headroom--top + .container {
-  padding-top: 58px;
-  padding-top: 3.62rem;
+  padding-top: 44px;
+  padding-top: 2.75rem;
 }
 .headroom--unpineed + .container {
-  padding-top: 0.8em;
+  padding-top: 0;
 }
 .hangouts > li {
   position: relative;
+  margin-bottom: 1.75em;
 }
 .hangouts > li:after {
   content: "";
@@ -133,7 +139,8 @@ select {
 .user-icon {
   float: left;
 }
-.user-icon a {
+.user-icon a,
+.user-icon span {
   text-decoration: none;
   display: block;
   width: 2.12em;
@@ -143,6 +150,7 @@ select {
   border-radius: 50%;
   width: 100%;
   height: 100%;
+  font-size: 0.56em;
 }
 .meta {
   color: #888;
@@ -163,7 +171,6 @@ select {
   margin-left: 2.75em;
 }
 .talk-body {
-  margin-bottom: 1.75em;
   border-radius: 0 0.45em 0.45em 0.45em;
   padding: 0.54em 0.69em 0.5em;
   font-size: 0.87em;
@@ -171,6 +178,7 @@ select {
   position: relative;
   display: inline-block;
   color: #444;
+  word-break: break-all;
 }
 .talk-body:before {
   content: "";
@@ -187,11 +195,43 @@ select {
   max-width: 224px;
   max-width: 14rem;
 }
-img:hover {
+a img:hover {
   opacity: .7;
 }
-[href] {
-  word-break: break-all;
+.cover {
+  margin-bottom: 2em;
+  background-color: #444;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  position: relative;
+  color: #fff;
+}
+.cover .clearfix {
+  background: rgba(0,0,0,.5);
+  padding: 0.8em;
+}
+.cover h1 {
+  font-size: 1.25em;
+  font-weight: normal;
+}
+.cover p {
+  font-size: 0.81em;
+}
+.user-icon-list {
+  position: relative;
+  bottom: -1.85em;
+}
+.user-icon-list .user-icon {
+  font-size: 0.8em;
+  display: inline-block;
+  position: relative;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+.user-icon-list .user-icon {
+  margin-right: -0.3em;
 }
 @font-face {
   font-family: 'icomoon';
@@ -319,14 +359,8 @@ img:hover {
 .js-nav-left {
   left: -240px;
 }
-.js-nav-right {
-  right: -240px;
-}
 .js-nav-left.js-nav--open {
   left: 0;
-}
-.js-nav-right.js-nav--open {
-  right: 0;
 }
 .js-nav-push {
   overflow-x: hidden;
@@ -335,9 +369,6 @@ img:hover {
 }
 .js-nav-push-toright {
   left: 240px;
-}
-.js-nav-push-toleft {
-  left: -240px;
 }
 .nav,
 .js-nav-push {
@@ -349,6 +380,7 @@ img:hover {
 .nav li {
   font-size : 13px;
   font-size: 0.93rem;
+  list-style: none;
 }
 .nav a {
   padding: 0.8em 0.9em;
@@ -368,11 +400,11 @@ img:hover {
     font-size: 0.8em;
   }
   .headroom--top + .container {
-    padding-top: 68px;
-    padding-top: 4.25rem;
+    padding-top: 52px;
+    padding-top: 3.25rem;
   }
   .headroom--unpineed + .container {
-    padding-top: 0.8em;
+    padding-top: 0;
   }
   .user-icon a {
     width: 2.5em;
@@ -388,6 +420,45 @@ img:hover {
   }
   .talk-body {
     font-size: 0.9375em;
+  }
+}
+@media (min-width: 768px) {
+  .user-icon a {
+    width: 3em;
+    height: 3em;
+  }
+  .talk {
+    margin-left: 3.8em;
+  }
+  .header-toggle {
+    display: none;
+  }
+  .container {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  .main {
+    display: table-cell;
+  }
+  .hangouts {
+    padding: 0.8em 1em;
+  }
+  .nav {
+    display: table-cell;
+    position: relative;
+    box-shadow: none;
+    z-index: 0;
+  }
+  .js-nav-left,
+  .js-nav-left.js-nav--open,
+  .js-nav-push-toleft {
+    left: 0;
+  }
+  .js-nav-push {
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
   }
 }
 @media (min-width: 960px) {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html class="no-js" lang="ja">
 <head>
-<title>Hangouts Archives</title>
+<title>Hangout Archive</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -9,28 +9,52 @@
 </head>
 <body class="js-nav-push">
 <header class="headroom">
-  <div class="header-toggle"><button class="header-button" id="js-menu-left-toggle"><div class="icon">menu</div></button></div>
+  <div class="header-toggle"><button class="header-button" id="js-menu-left-toggle"><span class="icon">menu</span></button></div>
   <div class="header-title">
     <h1>Hangouts Archives</h1>
   </div>
 </header>
 <div class="container">
-  <div style="border-radius:5px;background:#fff;padding:16px;margin: 0 16px">
-    <p>Google Hangouts のアーカイブを表示するためのテンプレートです💚</p>
-    <p><span class="icon-github"></span> <a href="https://github.com/Trueloveplanet/hangouts-style" target="_blank">GitHub</a></p>
+  <div class="nav js-nav-left" id="js-menu-left">
+    <nav>
+      <h2><a href="index.html">Index</a></h2>
+      <ul class="nav-list">
+        <li><a href="hangouts.html"><span class="icon-person"></span> Trueloveplanet - TLP</a></li>
+        <li><a href="hangouts.html"><span class="icon-people"></span> とある緑のハングアウト</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="main">
+    <div class="cover" style="background-image:url()">
+      <div class="clearfix">
+        <h1>Hangout Archives</h1>
+        <p>Google Hangouts のアーカイブを表示するためのテンプレートです💚</p>
+      </div>
+    </div>
+    <div style="padding:16px;">
+      <p><span class="icon-hangouts" style="color:#0f9d58;font-size:65px;"></span></p>
+      <p><span class="icon-github"></span> <a href="https://github.com/Trueloveplanet/hangouts-style" target="_blank">GitHub</a></p>
+    </div>
   </div>
 </div>
-<nav class="nav js-nav-left" id="js-menu-left">
-  <h2><a href="index.html">Index</a></h2>
-  <ul class="nav-list">
-    <li><a href="hangouts.html"><span class="icon-person"></span> Trueloveplanet - TLP</a></li>
-    <li><a href="hangouts.html"><span class="icon-people"></span> とある緑のハングアウト</a></li>
-  </ul>
-</nav>
 <script src="https://cdn.rawgit.com/Trueloveplanet/hangouts-style/c7b839cef343694e56b8bbfeff79de5dcf316f8e/layzr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.js"></script>
 <script src="https://cdn.rawgit.com/Trueloveplanet/hangouts-style/9edb1655172d17f7bb1ee79f431f28985c4960c3/bower_components/classie/classie.js"></script>
 <script>
+var instance = Layzr({
+  normal: 'data-normal',
+  retina: 'data-retina',
+  srcset: 'data-srcset'
+})
+instance
+  .on('src:before', function(image) {
+    console.log('src:before')
+    image.addEventListener('load', function() { console.log('loaded') })
+  })
+  .on('src:after', function() { console.log('src:after') })
+instance
+  .update()
+  .handlers(true)
 // grab an element
 var myElement = document.querySelector("header");
 // construct an instance of Headroom, passing the element
