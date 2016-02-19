@@ -2,6 +2,24 @@
 * {
   box-sizing: border-box;
 }
+::selection {
+  background: #50B432;
+  color: #fff;
+}
+::-moz-selection {
+  background: #50B432;
+  color: #fff;
+}
+a {
+  -webkit-tap-highlight-color: rgba(76,182,37,.4);
+}
+a:hover {
+  background: rgba(76,182,37,.4);
+}
+a:active {
+  color: #fff;
+  background: rgb(76,182,37);
+}
 html, body {
   margin: 0;
   font-size: 16px;
@@ -14,6 +32,7 @@ body {
 h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
+  font-size: 1em;
 }
 img {
   vertical-align: bottom;
@@ -67,7 +86,7 @@ header {
   height: 2.75rem;
   position: relative;
   box-shadow: 0 0 2px 2px rgba(0,0,0,.2);
-  z-index: 2;
+  z-index: 3;
 }
 .header-title h1 {
   padding: 0;
@@ -216,12 +235,28 @@ a img:hover {
   padding: 0.8em;
   min-height: 6.25em;
 }
-.cover h1 {
-  font-size: 1.25em;
-  font-weight: normal;
-}
+.cover-title,
 .cover p {
+  margin: 0;
+  padding: 0;
   font-size: 0.81em;
+  font-weight: normal;
+  line-height: 1.3;
+}
+.cover-title + p {
+  padding: 0.2em 0 0.81em;
+}
+.cover-title b {
+  font-size: 2.2em;
+}
+.cover a {
+  color: #fff;
+  text-decoration: none;
+}
+.cover .separate {
+  font-weight: normal;
+  display: inline-block;
+  margin: 0 0.4em;
 }
 .user-icon-list {
   position: absolute;
@@ -395,18 +430,42 @@ a img:hover {
   font-size: 0.93rem;
   list-style: none;
 }
+.section-title {
+  padding: 0.5em 0.8em;
+}
+.link-list a,
 .nav a {
   padding: 0.8em 0.9em;
   display: block;
   text-decoration: none;
   color: #333;
 }
-.nav a:hover {
-  background: rgba(0,0,0,.1);
+.link-list {
+  list-style: none;
+  background: #fff;
+}
+.link-list li {
+  border-bottom: 1px solid #eee;
+}
+.link-list .icon-chat {
+  margin-right: 0.3em;
+  color: #0f9d58;
+  font-size: 1.2em;
+  display: inline-block;
+  vertical-align: middle;
+}
+.link-list a:active,
+.link-list a:active .icon-chat {
+  color: #fff;
 }
 .graph {
   width: 100%;
   height: 15.63em;
+  background: #222;
+  overflow-x: scroll;
+}
+.graph::webkit-scrollbar {
+  display: none;
 }
 @media (min-width: 375px) {
   header {
