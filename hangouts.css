@@ -48,6 +48,9 @@ img {
 .font-large {
   font-size: 2em;
 }
+.heading {
+  padding: 0.5em 0.8em;
+}
 .header-toggle,
 .header-title {
   display: table-cell;
