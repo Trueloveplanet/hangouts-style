@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ja">
+<head>
+<title>Trueloveplanet - TLP : Hangout Archive</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" type="text/css" href="../hangouts.css">
+</head>
+<body class="js-nav-push">
+<header class="headroom">
+  <div class="header-toggle"><button class="header-button" id="js-menu-left-toggle"><span class="icon">menu</span></button></div>
+  <div class="header-title">
+    <h1>Hangouts Archives</h1>
+  </div>
+</header>
+<div class="container">
+  <div class="nav js-nav-left" id="js-menu-left">
+    <nav>
+      <h2><a href="../index.html">Index</a></h2>
+      <ul class="nav-list">
+        <li><a href="index.html"><span class="icon-person"></span> Trueloveplanet - TLP</a></li>
+        <li><a href="../group-sample/index.html"><span class="icon-people"></span> とある緑のハングアウト</a></li>
+      </ul>
+    </nav>
+  </div><!-- /.nav -->
+  <div class="main">
+    <div class="cover" style="background-image:url(https://lh3.googleusercontent.com/BDa-XHcVDo23AQ31XFS15WEU26vO_2tNEgmCBSLS_mc9s7Qo2-t6DVzaI8TMymE3Epz7PA=s630-fcrop64=1,00004747ffffa716)">
+      <div class="clearfix">
+        <h1 class="cover-title"><b><a href="index.html">Trueloveplanet - TLP</a></b></h1>
+        <p>アーカイブインデックス</p>
+        <ul class="user-icon-list">
+          <li class="user-icon">
+            <span>
+              <img src="https://lh3.googleusercontent.com/-mcOTGXEVbbM/AAAAAAAAAAI/AAAAAAAAACc/bXv6jxzxkPg/s120-c/photo.jpg" alt="Trueloveplanet">
+            </span>
+          </li>
+          <li class="user-icon">
+            <span>
+              <img src="https://lh3.googleusercontent.com/-_u9LcvVJz-o/AAAAAAAAAAI/AAAAAAABQ2I/Mek51ShOh3A/s92-c-k-no/photo.jpg" alt="TLP">
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div><!-- /.cover -->
+    <section>
+      <h2 class="section-title">年別アーカイブ</h2>
+      <ul class="link-list--flex">
+        <li>
+          <a href="monthly.html">
+            <div class="flex">
+              <span class="icon-folder"></span>
+              <b class="font-large">2016</b> 年
+              <p class="meta">発言数: <b>1,200</b></p>
+            </div>
+            <div class="flex graph-outer">
+              <div id="js-graph-2016" class="js-graph graph--small"></div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="monthly.html">
+            <div class="flex">
+              <span class="icon-folder"></span>
+              <b class="font-large">2017</b> 年
+              <p class="meta">発言数: <b>1,234</b></p>
+            </div>
+            <div class="flex graph-outer">
+              <div id="js-graph-2017" class="js-graph graph--small"></div>
+            </div>
+          </a>
+        </li>
+        <li>
+          <a href="monthly.html">
+            <div class="flex">
+              <span class="icon-folder"></span>
+              <b class="font-large">2018</b> 年
+              <p class="meta">発言数: <b>2,345</b></p>
+            </div>
+            <div class="flex graph-outer">
+              <div id="js-graph-2018" class="js-graph graph--small"></div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </div><!-- /.main -->
+</div><!-- /.container -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script>
+$(function () {
+  // set the theme
+  Highcharts.setOptions({
+    colors: ['#50B432', '#64E572'],
+    chart: {
+      type: 'column',
+      spacingBottom: 10,
+      spacingTop: 12,
+      spacingLeft: 6,
+      spacingRight: 12,
+      width: null,
+      height: null,
+      backgroundColor: 'rgba(255,255,255,0)',
+      style: {
+        "fontFamily" : 'Helvetica'
+      }
+    },
+    title: {
+      text: '',
+      style: {
+        "color": '#999',
+        "fontSize": '12'
+      }
+    },
+    subtitle: {
+      style: {
+        "color": '#999',
+        "fontSize": '12'
+      }
+    },
+    legend: {
+      enabled: false
+    },
+    credits: {
+      enabled: false
+    },
+    xAxis: {
+      // 月
+      categories: ['1', '2', '3','4', '5', '6', '7', '8', '9', '10', '11', '12'],
+      lineColor: "#9f9f9f",
+      tickColor: "rgba(255,255,255,0)",
+      labels: {
+        style: {
+          "color": '#999'
+        }
+      }
+    },
+    yAxis: {
+      labels: {
+        style: {
+          "color": '#999'
+        }
+      },
+      title: {
+        text: '',
+        style: {
+          color: '#999'
+        }
+      }
+    }
+  });
+  $('#js-graph-2016').highcharts({
+    series: [{
+      name: '発言数',
+      borderWidth: 0,
+      // 2016年の1月から12月までの月別発言数
+      data: [1537, 1271, 3280, 2486, 1207, 1476, 4287, 5240, 773, 1416, 2476, 3445]
+    }]
+  });
+  $('#js-graph-2017').highcharts({
+    series: [{
+      name: '発言数',
+      borderWidth: 0,
+      // 2017年の1月から12月までの月別発言数
+      data: [1537, 1271, 3280, 2486, 1207, 1476, 4287, 5240, 773, 1416, 2476, 3445]
+    }]
+  });
+  $('#js-graph-2018').highcharts({
+    series: [{
+      name: '発言数',
+      borderWidth: 0,
+      // 2018年の1月から12月までの月別発言数
+      data: [1537, 1271, 3280, 2486, 1207, 1476, 4287, 5240, 773, 1416, 2476, 3445]
+    }]
+  });
+});
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.js"></script>
+<script src="https://cdn.rawgit.com/Trueloveplanet/hangouts-style/9edb1655172d17f7bb1ee79f431f28985c4960c3/bower_components/classie/classie.js"></script>
+<script>
+// grab an element
+var myElement = document.querySelector("header");
+// construct an instance of Headroom, passing the element
+var headroom  = new Headroom(myElement);
+// initialise
+headroom.init();
+// nav
+var menuLeft = document.getElementById( 'js-menu-left' ),
+  showLeftPush = document.getElementById( 'js-menu-left-toggle' ),
+  body = document.body;
+showLeftPush.onclick = function() {
+  classie.toggle( this, 'active' );
+  classie.toggle( body, 'js-nav-push-toright' );
+  classie.toggle( menuLeft, 'js-nav--open' );
+  disableOther( 'showLeftPush' );
+};
+function disableOther( button ) {
+  if( button !== 'showLeftPush' ) {
+    classie.toggle( showLeftPush, 'disabled' );
+  }
+}
+</script>
+</body>
+</html>

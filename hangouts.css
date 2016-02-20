@@ -16,7 +16,8 @@ a {
 a:hover {
   background: rgba(76,182,37,.4);
 }
-a:active {
+a:active,
+a:active * {
   color: #fff;
   background: rgb(76,182,37);
 }
@@ -43,6 +44,9 @@ img {
 }
 .clearfix:after {
   clear: both;
+}
+.font-large {
+  font-size: 2em;
 }
 .header-toggle,
 .header-title {
@@ -167,6 +171,7 @@ header {
   display: block;
   width: 2.12em;
   height: 2.12em;
+  border-radius: 50%;
 }
 .user-icon img {
   border-radius: 50%;
@@ -221,7 +226,7 @@ a img:hover {
   opacity: .7;
 }
 .cover {
-  background-color: #444;
+  background-color: #0f9d58;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -257,6 +262,9 @@ a img:hover {
   font-weight: normal;
   display: inline-block;
   margin: 0 0.4em;
+}
+.cover + section {
+  padding-top: 1.5em;
 }
 .user-icon-list {
   position: absolute;
@@ -434,38 +442,67 @@ a img:hover {
   padding: 0.5em 0.8em;
 }
 .link-list a,
+.link-list--flex a,
 .nav a {
   padding: 0.8em 0.9em;
   display: block;
   text-decoration: none;
   color: #333;
 }
-.link-list {
+.link-list,
+.link-list--flex {
   list-style: none;
   background: #fff;
 }
-.link-list li {
+.link-list li,
+.link-list--flex li {
   border-bottom: 1px solid #eee;
 }
-.link-list .icon-chat {
+.link-list [class^="icon-"],
+.link-list--flex [class^="icon-"] {
   margin-right: 0.3em;
   color: #0f9d58;
   font-size: 1.2em;
   display: inline-block;
   vertical-align: middle;
 }
-.link-list a:active,
-.link-list a:active .icon-chat {
-  color: #fff;
+.flex .icon-folder {
+  margin-top: 0.3em;
+  float: left;
+  font-size: 2em;
 }
-.graph {
+.link-list--flex a {
+  display: table;
+  width: 100%;
+  padding: 0;
+}
+.flex {
+  display: table;
+  width: 100%;
+  vertical-align: middle;
+}
+a .flex {
+  padding: 0.1em 0.9em;
+}
+a .flex.graph-outer {
+  padding: 0;
+}
+.graph,
+.graph--small {
   width: 100%;
   height: 15.63em;
   background: #222;
   overflow-x: scroll;
 }
-.graph::webkit-scrollbar {
+.graph--small {
+  background: transparent;
+}
+.graph::webkit-scrollbar,
+.graph--small::webkit-scrollbar {
   display: none;
+}
+.graph--small {
+  height: 8em;
 }
 @media (min-width: 375px) {
   header {
@@ -535,6 +572,10 @@ a img:hover {
     overflow-x: hidden;
     position: relative;
     left: 0;
+  }
+  .flex {
+    display: table-cell;
+    width: 50%;
   }
 }
 @media (min-width: 960px) {
