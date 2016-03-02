@@ -17,7 +17,8 @@ a:hover {
   background: rgba(76,182,37,.4);
 }
 a:active,
-a:active * {
+a:active *,
+a:active [class^="icon-"] {
   color: #fff;
   background: rgb(76,182,37);
 }
@@ -224,6 +225,10 @@ header {
   display: inline-block;
   max-width: 224px;
   max-width: 14rem;
+}
+.talk-body a {
+  display: inline-block;
+  border-radius: 0.2em;
 }
 a img:hover {
   opacity: .7;
@@ -451,6 +456,11 @@ a img:hover {
   display: block;
   text-decoration: none;
   color: #333;
+}
+.link-list a:active,
+.link-list--flex a:active,
+.nav a:active {
+  color: #fff;
 }
 .link-list,
 .link-list--flex {

@@ -29,6 +29,7 @@
       <div class="clearfix">
         <h1 class="cover-title"><b><a href="index.html">とある緑のハングアウト</a><span class="separate">/</span></b><b><a href="monthly.html">2016</a><span class="separate">/</span></b><b><a href="daily.html">01</a><span class="separate">/</span></b><b>06</b></h1>
         <p><time datetime="2016-01-06T23:31:10+09:00">2016/01/06 23:31:10</time> 〜 <time datetime="2016-01-08T02:14:18+09:00">2016/01/08 02:14:18</time></p>
+        <input type="search" size="20" id="js-search" placeholder="Search">
         <ul class="user-icon-list">
           <li class="user-icon">
             <span>
@@ -58,7 +59,7 @@
         </ul>
       </div>
     </div><!-- /.cover -->
-    <ul class="hangouts">
+    <ul id="js-result" class="hangouts">
       <!-- item -->
       <li>
         <div class="user-icon">
@@ -173,10 +174,21 @@
     </ul>
   </div><!-- /.main -->
 </div><!-- /.container -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 <script src="https://cdn.rawgit.com/Trueloveplanet/hangouts-style/c7b839cef343694e56b8bbfeff79de5dcf316f8e/layzr.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.7.0/headroom.js"></script>
 <script src="https://cdn.rawgit.com/Trueloveplanet/hangouts-style/9edb1655172d17f7bb1ee79f431f28985c4960c3/bower_components/classie/classie.js"></script>
 <script>
+$(function(){
+  $('#js-search').keyup(function(){
+    if (!$(this).val()) {
+      $('#js-result li').show();
+    } else {
+      $('#js-result li').hide();
+      $('#js-result li:contains(' + this.value + ')').show();
+    }
+  });
+});
 var instance = Layzr({
   normal: 'data-normal',
   retina: 'data-retina',
